@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <joined-subclass dynamic-insert="false" dynamic-update="false" mutable="true" name="br.com.bean.Classes_Mapeamentos.Dependente" extends="br.com.bean.Classes_Mapeamentos.Pessoa" optimistic-lock="version" polymorphism="implicit" select-before-update="false">
+    
+        <key column="pessoaId"></key>
+        
+        <property name="grauParentesco" type="integer">
+            <column name="GrauParentesco"></column>
+        </property>
+        
+    </joined-subclass>
+</hibernate-mapping>
