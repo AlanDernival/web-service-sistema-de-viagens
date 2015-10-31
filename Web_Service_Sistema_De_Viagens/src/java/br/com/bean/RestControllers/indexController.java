@@ -5,29 +5,40 @@
  */
 package br.com.bean.RestControllers;
 
-
-import java.sql.SQLException;
-import org.springframework.stereotype.Controller;
+import br.com.bean.Utilitarios.TestaHibernate;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import java.util.Date;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author Guilherme
+ * @author Programador
  */
-@Controller
-public class indexController {
 
-    @RequestMapping("/index")
-    public ModelAndView home() throws SQLException {
-        ModelAndView mv = new ModelAndView("index");
-        return mv;
-    }
+@RestController
+public class indexController { 
+    
     
     @RequestMapping("testa-hibernate")
-    public ModelAndView insereRegistro() throws SQLException{
-        
-         ModelAndView mv = new ModelAndView("index");
-        return mv;
+    public Boolean boaTarde() {
+        TestaHibernate.Teste();
+        return true;
     }
+    
+    
+    @RequestMapping("olamundo")
+    public String olaMundo() {        
+        return "Olá mundo";
+    }    
+   
+    
+    @RequestMapping("olamundo2")
+    public String olaMundo2(String nome) {        
+        return "Olá mundo " + nome;
+    }      
+    
+    
 }
