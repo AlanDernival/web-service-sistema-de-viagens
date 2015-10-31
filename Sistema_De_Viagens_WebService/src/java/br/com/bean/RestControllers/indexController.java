@@ -6,6 +6,7 @@
 package br.com.bean.RestControllers;
 
 import br.com.bean.Utilitarios.TestaHibernate;
+import java.text.ParseException;
 import java.util.Date;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,7 @@ public class indexController {
     
     
     @RequestMapping("testa-hibernate")
-    public Boolean boaTarde() {
+    public Boolean boaTarde() throws ParseException {
         TestaHibernate.Teste();
         return true;
     }
