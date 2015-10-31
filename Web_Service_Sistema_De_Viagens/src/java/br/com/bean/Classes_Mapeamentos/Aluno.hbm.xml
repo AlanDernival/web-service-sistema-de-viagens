@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <joined-subclass dynamic-insert="false" dynamic-update="false" mutable="true" name="br.com.bean.Classes_Mapeamentos.Aluno" extends="br.com.bean.Classes_Mapeamentos.Pessoa" optimistic-lock="version" polymorphism="implicit" select-before-update="false">
+  
+      <key column="pessoaId" />
+      
+      <property name="curso" type="string" not-null="true">
+          <column name="Curso" length="2000"/>
+      </property>
+      
+      <property name="numeroCarteiraFaculdade" type="string" not-null="true">
+          <column name="NumeroCarteiraFaculdade" length="50"/>
+      </property>
+      
+      <property name="semestre" type="integer" not-null="true">
+          <column name="semestre"/>
+      </property>
+      
+  </joined-subclass>
+</hibernate-mapping>
